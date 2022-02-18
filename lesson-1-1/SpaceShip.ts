@@ -1,22 +1,21 @@
-import Vector from './Vector';
+import GameObject from './GameObject';
 
-export default class SpaceShip {
-	#position: Vector = new Vector(0, 0)
-	#velocity: Vector = new Vector(0, 0)
+export default class SpaceShip extends GameObject {
+	#angle: number = 0
 
-	get position(): Vector {
-		return this.#position
+	get angle(): number {
+		return this.#angle
 	}
 
-	set position(newPosition: Vector) {
-		this.#position = newPosition
+	set angle(newAngle) {
+		this.#angle = newAngle
 	}
 
-	get velocity(): Vector {
-		return this.#velocity
+	public rotate() {
+		this.velocity = this.velocity.rotate(this.angle)
 	}
 
-	set velocity(newVelocity: Vector) {
-		this.#velocity = newVelocity
+	public fuelBurn() {
+		this.fuel = this.fuel - 10
 	}
 }
