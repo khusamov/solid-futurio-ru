@@ -1,8 +1,7 @@
-import GameObject from './GameObject';
 import IMovable from './IMovable';
 import Vector from './Vector';
 
-export default class SpaceShip extends GameObject implements IMovable {
+export default class SpaceShip implements IMovable {
 	#position: Vector = new Vector(0, 0)
 	#velocity: Vector = new Vector(0, 0)
 
