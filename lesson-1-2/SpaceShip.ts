@@ -7,7 +7,7 @@ export default class SpaceShip extends GameObject implements IMovable {
 	#velocity: Vector = new Vector(0, 0)
 
 	get position(): Vector {
-		return this.position
+		return this.#position
 	}
 
 	set position(newPosition: Vector) {
@@ -15,7 +15,7 @@ export default class SpaceShip extends GameObject implements IMovable {
 	}
 
 	get velocity(): Vector {
-		return this.velocity
+		return this.#velocity
 	}
 
 	set velocity(newVelocity: Vector) {
