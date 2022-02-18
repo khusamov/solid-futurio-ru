@@ -13,3 +13,12 @@
    Как теперь эту проблему решать?
    В документации указывать порядок или вводить свойство
    приоритета действий?
+   
+2) В интерфейсе [IRotable][IRotable] появилось поле `velocity: Vector`, 
+   которое дублирует такое же поле из интерфейса [IMovable][IMovable]. 
+   Это правильно?
+
+
+
+[IRotable]: ../lesson-1-2/src/Rotate/IRotable.ts
+[IMovable]: ../lesson-1-2/src/Move/IMovable.ts
