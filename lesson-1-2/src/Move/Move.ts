@@ -4,6 +4,6 @@ export default class Move {
 	constructor(private movable: IMovable) {}
 
 	public execute() {
-		this.movable.position = this.movable.position.add(this.movable.velocity)
+		this.movable.position = this.movable.position.add(this.movable.movementVelocity)
 	}
 }

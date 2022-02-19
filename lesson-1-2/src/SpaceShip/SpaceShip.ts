@@ -4,8 +4,17 @@ import IRotable from '../Rotate/IRotable';
 
 export default class SpaceShip implements IMovable, IRotable {
 	#position: Vector = new Vector(0, 0)
-	#velocity: Vector = new Vector(0, 0)
+	#movementVelocity: Vector = new Vector(0, 0)
+	#angularVelocity: number = 0
 	#angle: number = 0
+
+	get angularVelocity(): number {
+		return this.#angularVelocity
+	}
+
+	set angularVelocity(newAngularVelocity) {
+		this.#angularVelocity = newAngularVelocity
+	}
 
 	get angle(): number {
 		return this.#angle
@@ -23,19 +32,20 @@ export default class SpaceShip implements IMovable, IRotable {
 		this.#position = newPosition
 	}
 
-	get velocity(): Vector {
-		return this.#velocity
+	get movementVelocity(): Vector {
+		return this.#movementVelocity
 	}
 
-	set velocity(newVelocity: Vector) {
-		this.#velocity = newVelocity
+	set movementVelocity(newMovementVelocity: Vector) {
+		this.#movementVelocity = newMovementVelocity
 	}
 
 	public clone(): SpaceShip {
 		const clone = new SpaceShip()
 		clone.position = this.position
-		clone.velocity = this.velocity
+		clone.movementVelocity = this.movementVelocity
 		clone.angle = this.angle
+		clone.angularVelocity = this.angularVelocity
 		return clone
 	}
 }

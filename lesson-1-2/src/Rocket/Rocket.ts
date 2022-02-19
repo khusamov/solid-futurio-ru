@@ -3,7 +3,7 @@ import Vector from '../Vector';
 
 export default class Rocket implements IMovable {
 	#position: Vector = new Vector(0, 0)
-	#velocity: Vector = new Vector(0, 0)
+	#movementVelocity: Vector = new Vector(0, 0)
 
 	get position(): Vector {
 		return this.#position
@@ -13,18 +13,18 @@ export default class Rocket implements IMovable {
 		this.#position = newPosition
 	}
 
-	get velocity(): Vector {
-		return this.#velocity
+	get movementVelocity(): Vector {
+		return this.#movementVelocity
 	}
 
-	set velocity(newVelocity: Vector) {
-		this.#velocity = newVelocity
+	set movementVelocity(newMovementVelocity: Vector) {
+		this.#movementVelocity = newMovementVelocity
 	}
 
 	public clone(): Rocket {
 		const clone = new Rocket()
 		clone.position = this.position
-		clone.velocity = this.velocity
+		clone.movementVelocity = this.movementVelocity
 		return clone
 	}
 }

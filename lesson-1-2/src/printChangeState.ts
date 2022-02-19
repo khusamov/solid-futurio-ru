@@ -17,15 +17,20 @@ export default function printChangeState(stateHistoryItem: IStateHistoryItem) {
 			[comment]: toDegree(middle.angle),
 			'Конечное состояние': toDegree(next.angle),
 		},
+		'Угловая скорость': {
+			'Начальное состояние': toDegree(prev.angularVelocity),
+			[comment]: toDegree(middle.angularVelocity),
+			'Конечное состояние': toDegree(next.angularVelocity),
+		},
 		'Позиция': {
 			'Начальное состояние': prev.position.toString(),
 			[comment]: middle.position.toString(),
 			'Конечное состояние': next.position.toString(),
 		},
-		'Скорость': {
-			'Начальное состояние': prev.velocity.toString(),
-			[comment]: middle.velocity.toString(),
-			'Конечное состояние': next.velocity.toString(),
+		'Скорость перемещения': {
+			'Начальное состояние': prev.movementVelocity.toString(),
+			[comment]: middle.movementVelocity.toString(),
+			'Конечное состояние': next.movementVelocity.toString(),
 		}
 	})
 }

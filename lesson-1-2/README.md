@@ -3,7 +3,7 @@
 
 В файле `index.ts` пример использования классов. 
 
-![image](https://user-images.githubusercontent.com/4146998/154758747-d0a9598f-bf6a-4dca-a041-f6261df0f9da.png)
+![image](https://user-images.githubusercontent.com/4146998/154808734-6e993392-b0f8-4456-978c-9fbcf5278a02.png)
 
 Вопросы:
 

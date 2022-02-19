@@ -9,5 +9,5 @@ export default interface IMovable {
 	/**
 	 * Скорость перемещения объекта.
 	 */
-	velocity: Vector
+	movementVelocity: Vector
 }

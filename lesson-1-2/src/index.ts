@@ -34,7 +34,7 @@ stateHistory.push({
 	comment: 'Перемещение корабля',
 	prev: spaceShip.clone(),
 	middle: (() => {
-		spaceShip.velocity = new Vector(1, 1)
+		spaceShip.movementVelocity = new Vector(1, 1)
 		return spaceShip.clone()
 	})(),
 	next: (() => {
@@ -50,7 +50,7 @@ stateHistory.push({
 	comment: 'Вращение корабля',
 	prev: spaceShip.clone(),
 	middle: (() => {
-		spaceShip.angle = Math.PI / 2
+		spaceShip.angularVelocity = Math.PI / 2
 		return spaceShip.clone()
 	})(),
 	next: (() => {
