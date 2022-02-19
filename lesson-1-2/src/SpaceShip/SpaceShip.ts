@@ -34,8 +34,8 @@ export default class SpaceShip implements IMovable, IRotable {
 	public clone(): SpaceShip {
 		const clone = new SpaceShip()
 		clone.position = this.position
-		clone.angle = this.angle
 		clone.velocity = this.velocity
+		clone.angle = this.angle
 		return clone
 	}
 }
