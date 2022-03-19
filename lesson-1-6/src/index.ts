@@ -1,82 +1,26 @@
+import Queue from './base/queue/Queue';
+import UniversalObject from './object/UniversalObject';
+import Vector from './base/Vector';
+import ICommand from './command/ICommand';
+import IoC from './ioc/IoC';
 
-// --------- tst-reflect ----------------
-import { getType, Type } from "tst-reflect";
-
-interface IAnimal
-{
-	name: string;
-}
-
-class Animal implements IAnimal
-{
-	constructor(public name: string)
-	{
-	}
-}
-
-const typeOfIAnimal: Type = getType<IAnimal>();
-const typeOfAnimal: Type = getType<Animal>();
-
-console.log(typeOfAnimal.isAssignableTo(typeOfIAnimal)); // true
+/**
+ * Очередь команд для всех игровых объектов.
+ */
+const commandQueue = new Queue<ICommand>()
 
 
+/**
+ * Массив игровых объектов.
+ */
+const gameObjects: UniversalObject[] = []
 
+// Создание корабля как игрового объекта.
+const spaceShip = new UniversalObject
+spaceShip.setValue('type', 'spaceShip')
+spaceShip.setValue('position', new Vector())
 
+gameObjects.push(spaceShip)
 
-// --------- typescript-rtti ----------------
-
-// import "reflect-metadata";
-// import {reflect, ReflectedClass, ReflectedInterfaceRef} from 'typescript-rtti'
-// import IoC from './ioc/IoC';
-// import IMovable from './command/move/IMovable';
-// import Vector from './base/Vector';
-//
-// interface IMovable2 {
-// 	position: Vector
-// 	readonly movementVelocity: Vector
-// }
-//
-// console.log(reflect<IMovable2>())
-// console.log(reflect<IMovable>())
-// console.log(reflect<IMovable>().as('interface').reflectedInterface)
-
-// class Class1 {
-// 	static resolve(a: Array<string>): number {
-// 		return 0
-// 	}
-// }
-//
-// Class1.resolve(['text'])
-
-
-// IoC.register('Adapter', (reflectedInterface: ReflectedClass) => {
-// 	const {properties, class: {name: interfaceName}} = reflectedInterface
-// 	const code = `
-// 		class implements ${interfaceName} {
-// 			constructor(universalObject) {this.universalObject = universalObject}
-// 			${
-// 				properties.map(property => {
-// 					return `
-// 						get ${property.name}() {
-// 							return IoC.resolve('${interfaceName}.${property.name}', this.universalObject)
-// 						}
-// 					`
-// 				})
-// 			}
-// 			${
-// 				properties.map(property => {
-// 					return `
-// 						set ${property.name}(${property.name}) {
-// 							return IoC.resolve('${interfaceName}.${property.name}.set', this.universalObject).execute()
-// 						}
-// 					`
-// 				})
-// 			}
-// 		}
-// 	`
-// 	return code;
-// })
-
-// console.log(
-// 	IoC.resolve<string>('Adapter', reflect<IMovable>().as('interface').reflectedInterface)
-// )
+// Добавление в очередь команды 'Длительное движение' для корабля.
+commandQueue.enqueue(IoC.resolve<ICommand>('Command.MoveLongTime.Start', spaceShip))
