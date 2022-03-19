@@ -22,6 +22,10 @@ IoC.register('Adapter', (interfaceName: string, universalObject: UniversalObject
 	// TODO Сделать генератор адаптеров.
 	//  Вместо interfaceName данный обработчик должен принимать Reflection-объект
 	//  с информацией о выбранном интерфейсе. Это пока не работает для TypeScript.
+
+	// Авторы рефлексии для тайпскрипта исправляют свою библиотеку
+	// по моей заявке https://github.com/typescript-rtti/typescript-rtti/issues/36
+
 	switch (interfaceName) {
 		case 'IMovable': return new MovableAdapter(universalObject)
 		default: throw new Error(`Не найден адаптер для ${interfaceName}`)
