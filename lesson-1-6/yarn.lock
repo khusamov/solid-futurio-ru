@@ -2060,11 +2060,13 @@ __metadata:
     parcel-plugin-ttypescript: ^1.0.2
     parcel-transformer-ttypescript: ^1.0.2
     process: ^0.11.10
+    reflect-metadata: ^0.1.13
     ts-mocha: ^9.0.2
     tst-reflect: ^0.7.4
     tst-reflect-transformer: ^0.9.5
     ttypescript: ^1.5.13
     typescript: ^4.5.5
+    typescript-rtti: ^0.5.3
   languageName: unknown
   linkType: soft
 
@@ -3079,6 +3081,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"reflect-metadata@npm:^0.1.13":
+  version: 0.1.13
+  resolution: "reflect-metadata@npm:0.1.13"
+  checksum: 798d379a7b6f6455501145419505c97dd11cbc23857a386add2b9ef15963ccf15a48d9d15507afe01d4cd74116df8a213247200bac00320bd7c11ddeaa5e8fb4
+  languageName: node
+  linkType: hard
+
 "regenerator-runtime@npm:^0.13.7":
   version: 0.13.9
   resolution: "regenerator-runtime@npm:0.13.9"
@@ -3520,6 +3529,16 @@ __metadata:
   version: 0.20.2
   resolution: "type-fest@npm:0.20.2"
   checksum: 4fb3272df21ad1c552486f8a2f8e115c09a521ad7a8db3d56d53718d0c907b62c6e9141ba5f584af3f6830d0872c521357e512381f24f7c44acae583ad517d73
+  languageName: node
+  linkType: hard
+
+"typescript-rtti@npm:^0.5.3":
+  version: 0.5.3
+  resolution: "typescript-rtti@npm:0.5.3"
+  peerDependencies:
+    reflect-metadata: ^0.1.13
+    typescript: 4.6
+  checksum: 19dadf24956443649fdf79fc731af0a2dd046f17c779dfb720b0e8f404bbc2b5c102800782b28ef39c967a129b57fbc8668819b30c450f05eba92dc06af549fc
   languageName: node
   linkType: hard
 
