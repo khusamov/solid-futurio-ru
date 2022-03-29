@@ -1,6 +1,16 @@
-# solid-futurio-ru
-Домашние задания на интенсиве Архитектура и дизайн паттерны от https://futurio.ru/
+Домашние задания к интенсиву futurio.ru
+=======================================
 
+В данном репозитории собраны решения домашних заданий
+на интенсиве Архитектура и дизайн паттерны от https://futurio.ru/
+
+Разработка игры по мотивам данных занятий ведется в репозитории:
+https://github.com/khusamov/solid-futurio-ru-game
+
+Конспекты по теме SOLID на моем личном сайте:
+https://khusamov.github.io/solid/intro
+
+Ссылка на интенсив:
 https://futurio.ru/architectures_and_design_patterns
 
 Ссылки
